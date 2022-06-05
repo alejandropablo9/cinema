@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationController: UINavigationController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let firstView = LoginVC()
+        let router = LoginRouter.init()
+        let firstView = router.view
         self.navigationController = UINavigationController(rootViewController: firstView)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

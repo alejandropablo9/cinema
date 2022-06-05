@@ -3,3 +3,10 @@
   cinema
   Created by Jesus Alejandro Pablo Ojeda on 05/06/22.
 */
+// MARK: General Messages
+"errorGenericService" = "Tenemos problemas para contactar el servidor, intenta más tarde.";
+// MARK: LoginVC
+"btn.login" = "iniciar sesión";
+"ph.username" = "usuario";
+"ph.password" = "contraseña";
+"lbl.welcome" = "bienvenido";

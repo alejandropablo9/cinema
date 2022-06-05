@@ -17,7 +17,7 @@ open class ManagerService {
                     /// Delegar acción ocurrida por la comunicación.
                     self.delegate?.didReceiveError(error: error, serviceName: tagName)
                 } else {
-                    if let statusCode = response.response?.statusCode, let data = response.value, statusCode >= 200 && statusCode < 300 {
+                    if let data = response.value {
                         /// Delegar acción respuesta exitosa.
                         self.delegate?.didReceiveData(data: data, serviceName: tagName)
                     } else {
