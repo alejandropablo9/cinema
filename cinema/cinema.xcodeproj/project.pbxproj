@@ -20,6 +20,16 @@
 		A9F2F4B7284D009C0086F23E /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F2F4B5284D009C0086F23E /* LoginVC.xib */; };
 		A9F2F4BA284D00D90086F23E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9F2F4B9284D00D90086F23E /* Localizable.strings */; };
 		A9F2F4BE284D01560086F23E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4BD284D01560086F23E /* StringExtensions.swift */; };
+		A9F2F4C6284D06CE0086F23E /* RequestSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4C1284D06CE0086F23E /* RequestSettings.swift */; };
+		A9F2F4C7284D06CE0086F23E /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4C2284D06CE0086F23E /* EndPoints.swift */; };
+		A9F2F4C8284D06CE0086F23E /* BaseFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4C3284D06CE0086F23E /* BaseFacade.swift */; };
+		A9F2F4C9284D06CE0086F23E /* ManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4C4284D06CE0086F23E /* ManagerService.swift */; };
+		A9F2F4CA284D06CE0086F23E /* ServiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4C5284D06CE0086F23E /* ServiceEntity.swift */; };
+		A9F2F4CC284D06ED0086F23E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4CB284D06ED0086F23E /* Logger.swift */; };
+		A9F2F4CE284D07010086F23E /* ClassExtenssions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4CD284D07010086F23E /* ClassExtenssions.swift */; };
+		A9F2F4D2284D0C350086F23E /* LoginFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4D1284D0C350086F23E /* LoginFacade.swift */; };
+		A9F2F4D4284D0C800086F23E /* LoginEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4D3284D0C800086F23E /* LoginEntities.swift */; };
+		A9F2F4D8284D24E80086F23E /* PlainTextEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2F4D7284D24E80086F23E /* PlainTextEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +68,16 @@
 		A9F2F4B5284D009C0086F23E /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		A9F2F4B9284D00D90086F23E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A9F2F4BD284D01560086F23E /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		A9F2F4C1284D06CE0086F23E /* RequestSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSettings.swift; sourceTree = "<group>"; };
+		A9F2F4C2284D06CE0086F23E /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		A9F2F4C3284D06CE0086F23E /* BaseFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFacade.swift; sourceTree = "<group>"; };
+		A9F2F4C4284D06CE0086F23E /* ManagerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerService.swift; sourceTree = "<group>"; };
+		A9F2F4C5284D06CE0086F23E /* ServiceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEntity.swift; sourceTree = "<group>"; };
+		A9F2F4CB284D06ED0086F23E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A9F2F4CD284D07010086F23E /* ClassExtenssions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtenssions.swift; sourceTree = "<group>"; };
+		A9F2F4D1284D0C350086F23E /* LoginFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacade.swift; sourceTree = "<group>"; };
+		A9F2F4D3284D0C800086F23E /* LoginEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntities.swift; sourceTree = "<group>"; };
+		A9F2F4D7284D24E80086F23E /* PlainTextEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainTextEncoder.swift; sourceTree = "<group>"; };
 		AC20FF5EB18EC26196890A23 /* Pods-cinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinema.debug.xcconfig"; path = "Target Support Files/Pods-cinema/Pods-cinema.debug.xcconfig"; sourceTree = "<group>"; };
 		BA8090B776709422849522AF /* Pods_cinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C292CE1BAF2C09962DD876E9 /* Pods-cinema-cinemaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cinema-cinemaUITests.debug.xcconfig"; path = "Target Support Files/Pods-cinema-cinemaUITests/Pods-cinema-cinemaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,7 +133,6 @@
 				FEB19669B14AA541014ABBDB /* Pods-cinemaTests.debug.xcconfig */,
 				1CF2FFB7ED2772490CC614F8 /* Pods-cinemaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +161,7 @@
 		A9F2F47E284CFFED0086F23E /* cinema */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2F4BF284D06630086F23E /* Data */,
 				A9F2F4B1284D006B0086F23E /* Main */,
 				A9F2F4B0284D00650086F23E /* Modules */,
 				A9F2F4BB284D011C0086F23E /* Utils */,
@@ -189,6 +209,7 @@
 		A9F2F4B2284D00780086F23E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2F4D5284D18BA0086F23E /* Interactor */,
 				A9F2F4B3284D007F0086F23E /* View */,
 			);
 			path = Login;
@@ -222,9 +243,57 @@
 		A9F2F4BC284D01480086F23E /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2F4CD284D07010086F23E /* ClassExtenssions.swift */,
 				A9F2F4BD284D01560086F23E /* StringExtensions.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		A9F2F4BF284D06630086F23E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2F4CF284D0C220086F23E /* WebService */,
+				A9F2F4C0284D068D0086F23E /* ServiceCore */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A9F2F4C0284D068D0086F23E /* ServiceCore */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2F4CB284D06ED0086F23E /* Logger.swift */,
+				A9F2F4C3284D06CE0086F23E /* BaseFacade.swift */,
+				A9F2F4C2284D06CE0086F23E /* EndPoints.swift */,
+				A9F2F4C4284D06CE0086F23E /* ManagerService.swift */,
+				A9F2F4C1284D06CE0086F23E /* RequestSettings.swift */,
+				A9F2F4C5284D06CE0086F23E /* ServiceEntity.swift */,
+				A9F2F4D7284D24E80086F23E /* PlainTextEncoder.swift */,
+			);
+			path = ServiceCore;
+			sourceTree = "<group>";
+		};
+		A9F2F4CF284D0C220086F23E /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2F4D0284D0C2B0086F23E /* Login */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		A9F2F4D0284D0C2B0086F23E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2F4D1284D0C350086F23E /* LoginFacade.swift */,
+				A9F2F4D3284D0C800086F23E /* LoginEntities.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A9F2F4D5284D18BA0086F23E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,8 +536,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F2F4C8284D06CE0086F23E /* BaseFacade.swift in Sources */,
 				A9F2F4BE284D01560086F23E /* StringExtensions.swift in Sources */,
+				A9F2F4C7284D06CE0086F23E /* EndPoints.swift in Sources */,
 				A9F2F4B6284D009C0086F23E /* LoginVC.swift in Sources */,
+				A9F2F4CC284D06ED0086F23E /* Logger.swift in Sources */,
+				A9F2F4CA284D06CE0086F23E /* ServiceEntity.swift in Sources */,
+				A9F2F4CE284D07010086F23E /* ClassExtenssions.swift in Sources */,
+				A9F2F4C6284D06CE0086F23E /* RequestSettings.swift in Sources */,
+				A9F2F4D4284D0C800086F23E /* LoginEntities.swift in Sources */,
+				A9F2F4C9284D06CE0086F23E /* ManagerService.swift in Sources */,
+				A9F2F4D8284D24E80086F23E /* PlainTextEncoder.swift in Sources */,
+				A9F2F4D2284D0C350086F23E /* LoginFacade.swift in Sources */,
 				A9F2F480284CFFED0086F23E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
