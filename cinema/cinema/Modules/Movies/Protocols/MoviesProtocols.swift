@@ -21,6 +21,8 @@ protocol MoviesPresenterProtocol {
     func getMovies()
     /// Función que cierra la sesión del usuario
     func getLogout()
+    /// Función para mostrar el detalle de la pelicula
+    func showDetail(movie: MovieCellEntity)
 }
 /// Protocolo de comunicación entre el interactor y el presenter
 protocol MoviesInputInteractorProtocol {
@@ -38,4 +40,6 @@ protocol MoviesOutputInteractorProtocol {
 protocol MoviesRouterProtocol {
     /// Función que cierra la sesión del usuario
     func getLogout()
+    /// Función para mostrar el detalle de la pelicula
+    func showDetail(movie: MovieCellEntity)
 }

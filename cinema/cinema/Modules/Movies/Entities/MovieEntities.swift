@@ -9,4 +9,5 @@ struct MovieCellEntity {
     let originalName: String
     let synopsis: String
     let poster: String
+    let posterH: String
 }

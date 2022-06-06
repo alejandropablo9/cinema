@@ -18,9 +18,10 @@ extension MoviesInteractor: MoviesInputInteractorProtocol {
         switch netConnection.connType {
         case .unknown:
             if let localData = self.serviceLocal.getData().first {
-                let urlImg = (localData.routes.filter({$0.code == "poster"}).first?.sizes?.xLarge ?? "").replacingOccurrences(of: "http", with: "https")
+                let urlImg = (localData.routes.filter({$0.code == "poster"}).first?.sizes?.large ?? "").replacingOccurrences(of: "http", with: "https")
+                let urlImgHorizontal = (localData.routes.filter({$0.code == "poster_horizontal"}).first?.sizes?.large ?? "").replacingOccurrences(of: "http", with: "https")
                 let values = localData.movies.map { movie in
-                    return MovieCellEntity.init(name: movie.name, originalName: movie.originalName, synopsis: movie.synopsis, poster: urlImg + (movie.media.filter({$0.code == "poster"}).first?.resources ?? ""))
+                    return MovieCellEntity.init(name: movie.name, originalName: movie.originalName, synopsis: movie.synopsis, poster: urlImg + (movie.media.filter({$0.code == "poster"}).first?.resources ?? ""), posterH: urlImgHorizontal + (movie.media.filter({$0.code == "poster_horizontal"}).first?.resources ?? ""))
                 }.shuffled()
                 self.presenter?.requestSuccess(response: values)
             } else {
@@ -39,9 +40,10 @@ extension MoviesInteractor: FacadeDelegate {
         case MoviesResponse.className:
             if let response = result as? MoviesResponse {
                 saveLocalData(response: response)
-                let urlImg = (response.routes.filter({$0.code == "poster"}).first?.sizes.xLarge ?? "").replacingOccurrences(of: "http", with: "https")
+                let urlImg = (response.routes.filter({$0.code == "poster"}).first?.sizes.large ?? "").replacingOccurrences(of: "http", with: "https")
+                let urlImgHorizontal = (response.routes.filter({$0.code == "poster_horizontal"}).first?.sizes.large ?? "").replacingOccurrences(of: "http", with: "https")
                 let values = response.movies.map { movie in
-                    return MovieCellEntity.init(name: movie.name, originalName: movie.originalName, synopsis: movie.synopsis, poster: urlImg + (movie.media.filter({$0.code == "poster"}).first?.resource ?? ""))
+                    return MovieCellEntity.init(name: movie.name, originalName: movie.originalName, synopsis: movie.synopsis, poster: urlImg + (movie.media.filter({$0.code == "poster"}).first?.resource ?? ""), posterH: urlImgHorizontal + (movie.media.filter({$0.code == "poster_horizontal"}).first?.resource ?? ""))
                 }
                 presenter?.requestSuccess(response: values)
             } else if let error = result as? ErrorResponseEntity {

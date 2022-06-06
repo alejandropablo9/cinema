@@ -34,4 +34,8 @@ extension MoviesRouter: MoviesRouterProtocol {
             UIView.transition(with: window, duration: 0.6, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
     }
+    func showDetail(movie: MovieCellEntity) {
+        let router = MovieDetailRouter.init(movie: movie)
+        view.navigationController?.pushViewController(router.view, animated: true)
+    }
 }

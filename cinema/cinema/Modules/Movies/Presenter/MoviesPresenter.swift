@@ -20,6 +20,9 @@ extension MoviesPresenter: MoviesPresenterProtocol {
     func getLogout() {
         router?.getLogout()
     }
+    func showDetail(movie: MovieCellEntity) {
+        router?.showDetail(movie: movie)
+    }
 }
 extension MoviesPresenter: MoviesOutputInteractorProtocol {
     func requestSuccess(response: [MovieCellEntity]) {

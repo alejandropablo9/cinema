@@ -71,5 +71,6 @@ extension MoviesVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.showDetail(movie: self.movies[indexPath.row])
     }
 }
