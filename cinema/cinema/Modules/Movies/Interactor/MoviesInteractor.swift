@@ -4,15 +4,33 @@
 //
 //  Created by Jesus Alejandro Pablo Ojeda on 05/06/22.
 //
+import Network
 final class MoviesInteractor {
     /// Referencia al presenter
     var presenter: MoviesOutputInteractorProtocol?
+    /// Monitorea el estado de conexión a internet
+    let netConnection = NetMonitor.shared
+    ///
+    let serviceLocal = LocalMovies.init()
 }
 extension MoviesInteractor: MoviesInputInteractorProtocol {
     func getMovies() {
-        let facade = MoviesFacade()
-        facade.delegate = self
-        facade.getMovies()
+        switch netConnection.connType {
+        case .unknown:
+            if let localData = self.serviceLocal.getData().first {
+                let urlImg = (localData.routes.filter({$0.code == "poster"}).first?.sizes?.xLarge ?? "").replacingOccurrences(of: "http", with: "https")
+                let values = localData.movies.map { movie in
+                    return MovieCellEntity.init(name: movie.name, originalName: movie.originalName, synopsis: movie.synopsis, poster: urlImg + (movie.media.filter({$0.code == "poster"}).first?.resources ?? ""))
+                }.shuffled()
+                self.presenter?.requestSuccess(response: values)
+            } else {
+                self.presenter?.requestFailure(error: "errorGenericService" .localized)
+            }
+        default:
+            let facade = MoviesFacade()
+            facade.delegate = self
+            facade.getMovies()
+        }
     }
 }
 extension MoviesInteractor: FacadeDelegate {
@@ -20,7 +38,12 @@ extension MoviesInteractor: FacadeDelegate {
         switch (tagName) {
         case MoviesResponse.className:
             if let response = result as? MoviesResponse {
-                presenter?.requestSuccess(response: response)
+                saveLocalData(response: response)
+                let urlImg = (response.routes.filter({$0.code == "poster"}).first?.sizes.xLarge ?? "").replacingOccurrences(of: "http", with: "https")
+                let values = response.movies.map { movie in
+                    return MovieCellEntity.init(name: movie.name, originalName: movie.originalName, synopsis: movie.synopsis, poster: urlImg + (movie.media.filter({$0.code == "poster"}).first?.resource ?? ""))
+                }
+                presenter?.requestSuccess(response: values)
             } else if let error = result as? ErrorResponseEntity {
                 presenter?.requestFailure(error: error.errorDescription ?? "errorGenericService" .localized)
             } else {
@@ -28,5 +51,17 @@ extension MoviesInteractor: FacadeDelegate {
             }
         default: break
         }
+    }
+}
+extension MoviesInteractor {
+    func saveLocalData(response: MoviesResponse) {
+        let routes = response.routes.compactMap { route in
+            return RouteLocal.init(code: route.code, sizes: SizesLocal.init(large: route.sizes.large ?? "", medium: route.sizes.medium, small: route.sizes.small ?? "", xLarge: route.sizes.xLarge ?? ""))
+        }
+        let movies = response.movies.compactMap { movie in
+            return MovieLocal.init(name: movie.name, originalName: movie.originalName, code: movie.code, distributor: movie.distributor, categories: movie.categories, media: movie.media.map({MediaLocal.init(resources: $0.resource, type: $0.type, code: $0.code)}), position: movie.position, synopsis: movie.synopsis)
+        }
+        let dataMovies = MoviesDataLocal.init(movies: movies, routes: routes)
+        _ = serviceLocal.save(data: dataMovies)
     }
 }

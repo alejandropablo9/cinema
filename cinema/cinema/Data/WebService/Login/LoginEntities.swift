@@ -73,6 +73,18 @@ final class LoginResponse: BaseEntity, ClassDescribing {
     public var contryCode: String
     public var issued: String
     public var expires: String
+    override init() {
+        self.accesToken = ""
+        self.expiresIn = 0
+        self.tokeyType = ""
+        self.refreshToken = ""
+        self.clientId = ""
+        self.contryCode = ""
+        self.issued = ""
+        self.expires = ""
+        self.userName = ""
+        super.init()
+    }
     /// Enumeración de llaves.
     public enum CodingKeys: String, CodingKey {
         case accesToken = "access_token"

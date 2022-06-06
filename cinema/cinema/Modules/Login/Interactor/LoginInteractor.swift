@@ -19,6 +19,7 @@ extension LoginInteractor: FacadeDelegate {
         switch (tagName) {
         case LoginResponse.className:
             if let response = result as? LoginResponse {
+                SessionData.saveLoginData(user: response)
                 presenter?.requestSuccess(response: response)
             } else if let error = result as? ErrorResponseEntity {
                 presenter?.requestFailure(error: error.errorDescription ?? "errorGenericService" .localized)

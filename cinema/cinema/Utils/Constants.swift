@@ -13,4 +13,8 @@ struct Constants {
         static let clientID: String = "IATestCandidate"
         static let grantType: String = "password"
     }
+    ///
+    struct KeysUserDefaults {
+        static let kUser = "kUser"
+    }
 }

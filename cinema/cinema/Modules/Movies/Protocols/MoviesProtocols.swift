@@ -11,7 +11,7 @@ protocol MoviesViewProtocol {
     /// Función que oculta la animcaicón de carga.
     func hideHUD()
     /// Indica respuesta exitosa del llamado al servicio.
-    func requestSuccess(response: MoviesResponse)
+    func requestSuccess(response: [MovieCellEntity])
     /// Indica respuesta erronea del lllamado al servicio.
     func requestFailure(error: String)
 }
@@ -28,7 +28,7 @@ protocol MoviesInputInteractorProtocol {
 /// Protocolo de comunicación entre el presenter y el interactor
 protocol MoviesOutputInteractorProtocol {
     /// Indica respuesta exitosa del llamado al servicio.
-    func requestSuccess(response: MoviesResponse)
+    func requestSuccess(response: [MovieCellEntity])
     /// Indica respuesta erronea del lllamado al servicio.
     func requestFailure(error: String)
 }

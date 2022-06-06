@@ -19,7 +19,7 @@ extension MoviesPresenter: MoviesPresenterProtocol {
     }
 }
 extension MoviesPresenter: MoviesOutputInteractorProtocol {
-    func requestSuccess(response: MoviesResponse) {
+    func requestSuccess(response: [MovieCellEntity]) {
         view?.hideHUD()
         view?.requestSuccess(response: response)
     }

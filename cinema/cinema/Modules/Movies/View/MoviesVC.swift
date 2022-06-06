@@ -13,9 +13,7 @@ final class MoviesVC: BaseViewController {
     /// Título
     @IBOutlet fileprivate weak var lblTitle: UILabel!
     /// Movies
-    private var movies: [Movie] = []
-    /// Rutas
-    private var rotues: [Route] = []
+    private var movies: [MovieCellEntity] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getMovies()
@@ -35,9 +33,8 @@ final class MoviesVC: BaseViewController {
     }
 }
 extension MoviesVC: MoviesViewProtocol {
-    func requestSuccess(response: MoviesResponse) {
-        self.movies = response.movies
-        self.rotues = response.routes
+    func requestSuccess(response: [MovieCellEntity]) {
+        self.movies = response
         collectionView.reloadData()
     }
     func requestFailure(error: String) {
@@ -52,13 +49,7 @@ extension MoviesVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCell else {
             return UICollectionViewCell()
         }
-        if let poster = self.rotues.filter({$0.code == "poster"}).first {
-            if let imgMovie = self.movies[indexPath.row].media.filter({$0.code == "poster"}).first {
-                let urlImg = (poster.sizes.xLarge ?? "") + imgMovie.resource
-                print(urlImg)
-                cell.configure(poster: urlImg.replacingOccurrences(of: "http", with: "https"))
-            }
-        }
+        cell.configure(poster: movies[indexPath.row].poster)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
