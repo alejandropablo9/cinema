@@ -16,9 +16,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="307" height="340"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-p8-wCM">
+                        <rect key="frame" x="0.0" y="0.0" width="307" height="340"/>
+                    </imageView>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cBa-p8-wCM" secondAttribute="trailing" id="7HB-zz-Ncm"/>
+                <constraint firstAttribute="bottom" secondItem="cBa-p8-wCM" secondAttribute="bottom" id="ACD-XH-4z4"/>
+                <constraint firstItem="cBa-p8-wCM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Hmm-5U-xXQ"/>
+                <constraint firstItem="cBa-p8-wCM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ecs-Vw-AER"/>
+            </constraints>
             <size key="customSize" width="307" height="340"/>
+            <connections>
+                <outlet property="posterMovie" destination="cBa-p8-wCM" id="edW-11-fxh"/>
+            </connections>
             <point key="canvasLocation" x="318.11594202898556" y="184.82142857142856"/>
         </collectionViewCell>
     </objects>

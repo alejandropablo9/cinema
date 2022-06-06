@@ -30,6 +30,10 @@ final class LoginVC: BaseViewController {
         txtFieldPassword.delegate = self
         txtFieldUserName.delegate = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     @IBAction func btnLoginPressed(_ sender: UIButton) {
         if let userName = txtFieldUserName.text, let pass = txtFieldPassword.text, !userName.isEmpty && !pass.isEmpty {
             presenter?.doLogin(username: userName.replacingOccurrences(of: "@", with: "%40"), password: pass)

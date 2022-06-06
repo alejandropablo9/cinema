@@ -10,3 +10,5 @@
 "ph.username" = "usuario";
 "ph.password" = "contraseña";
 "lbl.welcome" = "bienvenido";
+// MARK: MoviesVC
+"lbl.Movies" = "Cartelera";
