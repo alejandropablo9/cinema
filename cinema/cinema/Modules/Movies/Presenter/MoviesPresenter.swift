@@ -17,6 +17,9 @@ extension MoviesPresenter: MoviesPresenterProtocol {
         view?.showHUD()
         interactor?.getMovies()
     }
+    func getLogout() {
+        router?.getLogout()
+    }
 }
 extension MoviesPresenter: MoviesOutputInteractorProtocol {
     func requestSuccess(response: [MovieCellEntity]) {

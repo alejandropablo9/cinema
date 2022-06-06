@@ -19,6 +19,8 @@ protocol MoviesViewProtocol {
 protocol MoviesPresenterProtocol {
     /// Función que llama al servicio para solicitar cartelera
     func getMovies()
+    /// Función que cierra la sesión del usuario
+    func getLogout()
 }
 /// Protocolo de comunicación entre el interactor y el presenter
 protocol MoviesInputInteractorProtocol {
@@ -34,4 +36,6 @@ protocol MoviesOutputInteractorProtocol {
 }
 /// Protocolo de comunicación entre el presenter y el router
 protocol MoviesRouterProtocol {
+    /// Función que cierra la sesión del usuario
+    func getLogout()
 }

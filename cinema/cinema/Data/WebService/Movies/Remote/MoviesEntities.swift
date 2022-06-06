@@ -60,7 +60,7 @@ final class Movie: BaseEntity, ClassDescribing {
     /// Lanzamiento
     public let releaseDate: String
     /// Distribuidor
-    public let distributor: String
+    public let distributor: String?
     /// Id
     public let id: Int
     /// Nombre
@@ -119,7 +119,7 @@ final class Movie: BaseEntity, ClassDescribing {
         synopsis = try values.decode(String.self, forKey: .synopsis)
         length = try values.decode(String.self, forKey: .length)
         releaseDate = try values.decode(String.self, forKey: .releaseDate)
-        distributor = try values.decode(String.self, forKey: .distributor)
+        distributor = try values.decodeIfPresent(String.self, forKey: .distributor)
         id = try values.decode(Int.self, forKey: .id)
         name = try values.decode(String.self, forKey: .name)
         code = try values.decode(String.self, forKey: .code)

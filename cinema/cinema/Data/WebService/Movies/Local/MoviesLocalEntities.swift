@@ -19,12 +19,12 @@ class MovieLocal: Object {
     @Persisted var name: String
     @Persisted var originalName: String
     @Persisted var code: String
-    @Persisted var distributor: String
+    @Persisted var distributor: String?
     @Persisted var categories: List<String>
     @Persisted var media: List<MediaLocal>
     @Persisted var position: Int
     @Persisted var synopsis: String
-    convenience init(name: String, originalName: String, code: String, distributor: String, categories: [String], media: [MediaLocal], position: Int, synopsis: String) {
+    convenience init(name: String, originalName: String, code: String, distributor: String?, categories: [String], media: [MediaLocal], position: Int, synopsis: String) {
         self.init()
         self.name = name
         self.originalName = originalName

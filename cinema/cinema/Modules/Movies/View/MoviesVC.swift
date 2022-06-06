@@ -12,6 +12,8 @@ final class MoviesVC: BaseViewController {
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     /// Título
     @IBOutlet fileprivate weak var lblTitle: UILabel!
+    /// Botón cerrar sesión
+    @IBOutlet weak var btnLogout: UIButton!
     /// Movies
     private var movies: [MovieCellEntity] = []
     override func viewDidLoad() {
@@ -20,6 +22,9 @@ final class MoviesVC: BaseViewController {
         setCollectionView()
         navigationController?.isNavigationBarHidden = true
         lblTitle.text = "lbl.Movies".localized
+        let image = UIImage(named: "logout")?.withRenderingMode(.alwaysTemplate)
+        btnLogout.setImage(image, for: .normal)
+        btnLogout.tintColor = UIColor.white
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +35,10 @@ final class MoviesVC: BaseViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(UINib(nibName: "MovieCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MovieCell")
+    }
+    @IBAction func btnLogoutPressed(_ sender: UIButton) {
+        SessionData.deleteUserData()
+        presenter?.getLogout()
     }
 }
 extension MoviesVC: MoviesViewProtocol {

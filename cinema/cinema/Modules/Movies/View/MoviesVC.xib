@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesVC" customModule="cinema" customModuleProvider="target">
             <connections>
+                <outlet property="btnLogout" destination="xc2-UV-cSw" id="gme-mX-fJ1"/>
                 <outlet property="collectionView" destination="CvQ-cv-e2t" id="Zqb-xu-QFA"/>
                 <outlet property="lblTitle" destination="DmO-CU-xRo" id="nhA-et-Y7H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmO-CU-xRo">
-                    <rect key="frame" x="16" y="60" width="382" height="38.5"/>
+                    <rect key="frame" x="16" y="60" width="85" height="38.5"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -37,24 +38,36 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xc2-UV-cSw">
+                    <rect key="frame" x="362" y="60" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="5eA-dI-DWR"/>
+                        <constraint firstAttribute="height" constant="36" id="VCO-GC-H75"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="btnLogoutPressed:" destination="-1" eventType="touchUpInside" id="U3K-Ik-J56"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xc2-UV-cSw" secondAttribute="trailing" constant="16" id="1T4-GR-H1I"/>
                 <constraint firstItem="CvQ-cv-e2t" firstAttribute="top" secondItem="DmO-CU-xRo" secondAttribute="bottom" constant="16" id="4r3-UE-Dk9"/>
                 <constraint firstItem="DmO-CU-xRo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="6kc-Fl-Ywq"/>
+                <constraint firstItem="xc2-UV-cSw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="EYq-bJ-6Gm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CvQ-cv-e2t" secondAttribute="trailing" id="GcB-eK-ChC"/>
                 <constraint firstItem="DmO-CU-xRo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="g2x-LD-7cy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CvQ-cv-e2t" secondAttribute="bottom" id="hQl-fV-1n2"/>
                 <constraint firstItem="CvQ-cv-e2t" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="put-g5-kIH"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DmO-CU-xRo" secondAttribute="trailing" constant="16" id="uHG-72-pXt"/>
             </constraints>
             <point key="canvasLocation" x="132" y="132"/>
         </view>
     </objects>
     <resources>
         <namedColor name="background">
-            <color red="0.045278899371623993" green="0.067666329443454742" blue="0.0847950279712677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.045000001788139343" green="0.068000003695487976" blue="0.085000000894069672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
